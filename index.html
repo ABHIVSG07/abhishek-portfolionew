@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Abhishek Gaikwad — Mechanical Design Portfolio</title>
+<meta name="description" content="Portfolio of Abhishek — Mechanical Design, Creo, SolidWorks, CAD Automation" />
+<style>
+  :root{
+    --bg:#060818; --muted:#9aa6b8; --accent1:#60a5fa; --accent2:#7c3aed;
+    --radius:12px; --max-w:1150px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#eaf2ff;background:linear-gradient(180deg,#060818,#071029 60%);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  .wrap{max-width:var(--max-w);margin:28px auto;padding:20px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#061026}
+  nav{display:flex;gap:12px}
+  nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+  .hero{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .chip{background:rgba(255,255,255,0.03);padding:6px 9px;border-radius:999px;color:var(--muted);font-weight:700}
+  section{margin-top:20px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .project-card,.blog-card{padding:12px;border-radius:12px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.008));border:1px solid rgba(255,255,255,0.02);transition:transform .12s}
+  .project-card:hover,.blog-card:hover{transform:translateY(-6px)}
+  .thumb{height:110px;border-radius:8px;background:linear-gradient(135deg,#062b3a,#041226);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+  .project-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+  .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:#061026;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+  .small-meta{color:var(--muted);font-size:13px}
+  .detail-panel{position:fixed;right:0;top:0;height:100vh;width:min(980px,95%);max-width:980px;background:linear-gradient(180deg,#071226,#08142a);box-shadow:-20px 0 60px rgba(2,6,23,0.8);transform:translateX(110%);transition:transform .36s;z-index:120;padding:20px;overflow:auto}
+  .detail-panel.show{transform:none}
+  .detail-stage{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+  .detail-stage img{width:100%;height:100%;object-fit:contain;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#071226;padding:8px}
+  .muted{color:var(--muted)}
+  footer{margin-top:28px;text-align:center;color:var(--muted)}
+  @media (max-width:1000px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.detail-stage{grid-template-columns:1fr}} 
+  @media (max-width:600px){.grid-3{grid-template-columns:1fr}}
+  .more-toggle{display:flex;justify-content:center;margin-top:14px;gap:10px}
+
+  /* Experience list styling */
+  .exp-list{margin:0;padding-left:18px}
+  .exp-list li{margin-bottom:8px;line-height:1.5}
+  .job{margin-bottom:10px}
+  .job-title{font-weight:700}
+  .job-meta{color:var(--muted);font-size:13px;margin-bottom:6px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">AG</div>
+      <div>
+        <div style="font-weight:800">Abhishek Gaikwad</div>
+        <div class="muted" style="font-size:13px">Mechanical Design Engineer  — Creo , AutoCad , CAD Automation</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#learning">Learning</a>
+      <a href="#contact">Contact</a>
+      <!-- Experience button added (left of Blogs) -->
+       <a href="#education">Education</a>
+
+      <a href="#experience">Experience</a>
+      <a href="#blogs">Blogs</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="card">
+      <h2 style="margin:0 0 8px 0">Hi — I'm Abhishek Gaikwad</h2>
+      <p class="muted">Mechatronics-trained mechanical designer. I build CAD models + drawings ready for manufacturing, design sheet-metal, enclosures and mechanisms, and automate CAD tasks to save engineering time.</p>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip">Creo</span><span class="chip">SolidWorks</span><span class="chip">AutoCad</span><span class="chip">GD&T</span><span class="chip">Sheet-metal</span><span class="chip">CAD Automation</span><span class="chip">C++</span><span class="chip">OOPS</span><span class="chip">API</span><span class="chip">Part Modelling</span><span class="chip">Reverse Engineering</span><span class="chip">Vendor Management</span><span class="chip">Drafting</span>
+      </div>
+      <div style="margin-top:14px">
+        
+      </div>
+    </div>
+
+    <aside class="card">
+      <div style="text-align:center">
+       <div style="
+  width:120px;
+  height:120px;
+  margin:0 auto 10px auto;
+  border-radius:10px;
+  background-image:url('images/myimage.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+"></div>
+
+
+        <div style="font-weight:700">Abhishek Gaikwad</div>
+        <div class="muted" style="margin-top:6px">Mechanical Design Engineer                </div>
+        <div class="muted" style="margin-top:6px">                 CAD Developer </div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="about">
+    <div class="card">
+      <h3 style="margin-top:0">About</h3>
+      <p class="muted">I’m a Mechanical Design Engineer with a strong focus on creating manufacturable and high-precision CAD models. I work across sheet-metal, plastic, and mechanism design, and I use GD&T, design intent, and DFM principles to ensure every part is ready for real-world production. I’ve designed reliable enclosures, improved assemblies, and worked closely with vendors to turn designs into actual parts.</p>
+      <p class="muted">I’m currently learning Creo Toolkit to take my automation skills to the next level. I want to build tools that automate repetitive design tasks, reduce manual effort, and improve consistency across projects. I enjoy solving mechanical problems and converting ideas into practical, production-ready designs, and automation helps me make the entire design process faster and more efficient.</p>
+    </div>
+  </section>
+
+ <section id="education">
+  <div class="card">
+    <h3 style="margin-top:0">Education</h3>
+
+    <div class="job">
+      <div class="job-title">B.E. — Mechatronics Engineering</div>
+      <div class="job-meta">MMIT Lohegaon · 2021 – 2024</div>
+      <ul class="exp-list">
+        <li>Focused on mechanical design, automation and CAD modelling.</li>
+        <li>Worked on autonomous robot and safety system projects.</li>
+        <li>Developed strong understanding of GD&T, tolerance stack-up and manufacturing processes.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Diploma — Automobile Engineering</div>
+      <div class="job-meta">MM Polytechnic · 2019 – 2021</div>
+      <ul class="exp-list">
+        <li>Completed Electric Vehicle project during diploma.</li>
+        <li>Gained hands-on experience in vehicle systems and engineering fundamentals.</li>
+        <li>Strengthened CAD and mechanical problem-solving skills.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">HSC — Automobile Technology</div>
+      <div class="job-meta">Modern College, Ganeshkhind · 2017 – 2019</div>
+      <ul class="exp-list">
+        <li>Studied PCM with specialization in automobile technology.</li>
+        <li>Built strong fundamentals in physics, mechanics and engineering basics.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">SSC — Modern School, Ganeshkhind</div>
+      <div class="job-meta">2005 – 2017</div>
+      <ul class="exp-list">
+        <li>Completed schooling with distinction and strong academic performance.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="card">
+      <h3 style="margin-top:0">Experience</h3>
+
+      <div class="job">
+        <div class="job-title">Mechanical Design Trainee — Bharati Robotic</div>
+        <div class="job-meta">April 2025 – Present</div>
+        <ul class="exp-list">
+          <li>Designed floor-cleaning machine kits in Creo, including custom sheet-metal parts and full assembly models.</li>
+          <li>Prepared and updated detailed manufacturing drawings and maintained Design Revision Management (DRM).</li>
+          <li>Performed tolerance stack-up and quality validation checks following ASME guidance to ensure parts fit and function.</li>
+          <li>Maintained accurate BOMs in Excel and coordinated with vendors to verify manufacturing feasibility and delivery.</li>
+          <li>Used reverse engineering to improve existing machines and documented project decisions through MoMs.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-title">Mechanical Design Engineer — SQ M Technologies</div>
+        <div class="job-meta">Nov 2024 – Mar 2025</div>
+        <ul class="exp-list">
+          <li>Led end-to-end mechanical design for sheet-metal, plastic and silicone rubber enclosures from concept to production.</li>
+          <li>Created detailed 3D models in Creo and SolidWorks, and optimized designs for manufacturability and cost.</li>
+          <li>Applied tolerance analysis, DFMEA and validation methods to improve reliability and reduce failures in production.</li>
+          <li>Managed engineering change processes (ECR/ECN) and supported prototype testing and design iterations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-title">Academic & Internship Projects</div>
+        <div class="job-meta">College projects & internships</div>
+        <ul class="exp-list">
+          <li>Developed an autonomous mobile robot with obstacle avoidance — designed chassis, integrated sensors and supervised fabrication.</li>
+          <li>Led a smoke/gas detection system project using Arduino, handling sensor integration and real-time control.</li>
+          <li>Completed internships and training (including Automotive service exposure and Volkswagen/VGTAB training) and won a college CAD competition.</li>
+        </ul>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section id="projects">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 style="margin-top:0">Projects</h3>
+      <div class="small-meta">Showing <span id="visibleCount">3</span> of <span id="totalCount">8</span></div>
+    </div>
+
+    <div id="projectsGrid" class="grid-3" style="margin-top:12px"></div>
+
+    <div class="more-toggle">
+      <button id="showMore" class="ghost">More projects</button>
+      <button id="showLess" class="ghost" style="display:none">Less projects</button>
+    </div>
+  </section>
+
+ <section id="skills">
+  <div class="card">
+    <h3 style="margin-top:0">Skills</h3>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;line-height:1.55">
+
+      <!-- Column 1 -->
+      <div>
+        <div class="small-meta" style="font-weight:700;">Mechanical Design & CAD</div>
+        <div class="muted">
+          Proficient in Creo (sheet metal), SolidWorks, AutoCAD and Fusion 360 for 3D modelling, assemblies 
+          and detailed drafting. Experienced with CAD surfacing, enclosure development, large assemblies 
+          and converting 2D drawings into accurate 3D models.
+        </div>
+
+        <div class="card" style="padding:20px; border-radius:12px; overflow:hidden;">
+  <h3 style="margin-top:0">End-to-End Product Development Skills</h3>
+
+  <ul style="
+      margin-top:12px; 
+      padding-left:18px; 
+      line-height:1.65; 
+      font-size:15px; 
+      color:var(--muted); 
+      max-width:100%; 
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    ">
+
+    <li>Converting concept ideas into hand-drawn or digital sketches</li>
+    <li>Creating concept models and detailed CAD </li>
+    <li>Developing complete 3D models and manufacturing-ready drawings</li>
+    <li>Preparing DRM (Design Review Meeting) documentation and design justifications</li>
+    <li>Improving designs based on feedback, failures, and new requirements</li>
+    <li>Creating structured BOMs and sending them to vendors for quotation</li>
+    <li>Evaluating vendor quotes and selecting the appropriate manufacturing process</li>
+    <li>Performing quality checks on received parts and redesigning if issues occur</li>
+    <li>Building complete assembly models and validating fit & function</li>
+    <li>Improving design for future versions using a continuous improvement approach</li>
+    <li>Preparing CAD models for rendering and customer presentations (Blender)</li>
+
+  </ul>
+</div>
+
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <div class="small-meta" style="font-weight:700;">Engineering & Manufacturing</div>
+        <div class="muted">
+          Strong knowledge of GD&T, tolerance analysis (ASME Y14.5), DFMEA/DFMA, and basic FEA validation. 
+          Skilled in BOM creation, vendor coordination, and manufacturing processes for sheet metal, plastic 
+          and silicone rubber parts.
+        </div>
+
+        <div class="small-meta" style="margin-top:12px;font-weight:700;">Vendor Management</div>
+        <div class="muted">
+          Experience in coordinating with vendors and assisting accountants in releasing POs to ensure smooth 
+          procurement and timely production.
+        </div>
+
+        <div class="small-meta" style="margin-top:12px;font-weight:700;">PLM, Processes & Project Work</div>
+        <div class="muted">
+          Familiar with PLM workflows (Agile, Teamcenter), engineering change processes (ECR/ECN), NPD 
+          workflows, and documenting project progress through MoMs.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="card">
+    <h3 style="margin-top:0">Learning </h3>
+    <h3 style="margin-top:0">1. CAD Automation & Customization.</h3>
+    <p class="muted">
+      I am actively learning Creo Toolkit, parameter-based automation, and macro creation to automate repetitive CAD tasks. 
+      My goal is to build tools that reduce manual effort, improve consistency, and make the overall design process faster. 
+      I also explore automated BOM workflows and part template systems to streamline new design creation.
+    </p>
+    <h3 style="margin-top:0">2. Product Lifecycle Management.</h3>
+    
+    <p class="muted">
+        I’m currently learning the basics of Product Lifecycle Management (PLM) to understand how companies keep their engineering data organized throughout a product’s life. I’m exploring how systems like Teamcenter and Agile handle CAD files, revisions, BOMs, and engineering change processes (ECR/ECN).
+    </p>
+    <p class="muted">
+        I also want to understand how PLM connects different teams—design, manufacturing, and quality—so everyone works from the same accurate information. Learning PLM is helping me create cleaner, more traceable, and industry-ready design outputs that fit smoothly into real engineering workflows.
+    </p>
+
+  </div>
+</section>
+
+    
+  <section id="contact">
+  <div class="card" style="padding:22px; border-radius:14px; display:flex; gap:18px; align-items:stretch; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));">
+    <!-- Left: contact info -->
+    <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+      <h3 style="margin:0 0 6px 0; font-size:20px;">Contact</h3>
+      <p class="muted" style="margin:0 0 6px 0;">Get in Touch</p>
+
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#60a5fa,#7c3aed);font-weight:700;color:#061026;">✉️</div>
+          <div>
+            <div class="small-meta">Email</div>
+            <a href="mailto:abhivsg07@gmail.com" style="color:#a8d1ff;font-weight:700;text-decoration:none;">abhivsg07@gmail.com</a>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#06b6d4,#3b82f6);font-weight:700;color:#061026;">💼</div>
+          <div>
+            <div class="small-meta">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/abhivsg07" target="_blank" rel="noopener" style="color:#a8d1ff;font-weight:700;text-decoration:none;">linkedin.com/in/abhivsg07</a>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#10b981,#059669);font-weight:700;color:#061026;">📞</div>
+          <div>
+            <div class="small-meta">Phone</div>
+            <a href="tel:+919112366936" style="color:#a8d1ff;font-weight:700;text-decoration:none;">+91 91123 66936</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;color:var(--muted);font-size:13px;">
+        <strong></strong> 
+      </div>
+    </div>
+
+    <!-- Right: contact form -->
+    <div style="flex:1.1; min-width:320px;">
+      <form id="contactForm" style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:10px;">
+          <input type="text" id="cname" placeholder="Your name" required
+                 style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf2ff;"/>
+          <input type="email" id="cemail" placeholder="Your email" required
+                 style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf2ff;"/>
+        </div>
+
+        <textarea id="cmessage" placeholder="Write your message..." required
+                  style="min-height:110px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf2ff;resize:vertical"></textarea>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div class="small-meta muted" style="font-size:13px">I'll reply as soon as I can.</div>
+          <div style="display:flex;gap:8px;">
+            <button type="button" id="clearForm" class="ghost" style="padding:8px 12px;border-radius:10px;">Clear</button>
+            <!-- By default this opens user's email client with form content. Replace with backend handler if available. -->
+            <button type="submit" class="btn" style="padding:8px 14px;border-radius:10px;">Send message</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- small note -->
+      <div class="muted small-meta" style="margin-top:8px;font-size:13px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- JS to handle form (mailto fallback) -->
+  <script>
+    (function(){
+      const form = document.getElementById('contactForm');
+      const clearBtn = document.getElementById('clearForm');
+
+      clearBtn.addEventListener('click', function(){ form.reset(); });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById('cname').value.trim());
+        const email = encodeURIComponent(document.getElementById('cemail').value.trim());
+        const message = encodeURIComponent(document.getElementById('cmessage').value.trim());
+        if(!name || !email || !message){ alert('Please fill all fields'); return; }
+
+        // simple mailto fallback (opens user's mail client)
+        const subject = encodeURIComponent('Portfolio message from ' + (name||'Website visitor'));
+        const body = encodeURIComponent('Name: ' + decodeURIComponent(name) + '\\nEmail: ' + decodeURIComponent(email) + '\\n\\nMessage:\\n' + decodeURIComponent(message));
+        window.location.href = 'mailto:abhivsg07@gmail.com?subject=' + subject + '&body=' + body;
+      });
+    })();
+  </script>
+</section>
+
+
+
+  <!-- BLOGS (now hardcoded in JS - edit the BLOGS array in the script to add new posts) -->
+  <section id="blogs">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 style="margin-top:0">Blogs</h3>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div class="small-meta">Edit posts in the code (BLOGS array)</div>
+      </div>
+    </div>
+
+    <div id="blogsGrid" class="grid-3" style="margin-top:12px"></div>
+
+    <div class="more-toggle" style="margin-top:12px">
+      <button id="showMoreBlogs" class="ghost">Show all blogs</button>
+    </div>
+  </section>
+
+  <footer>© <span id="year"></span> Abhishek Gaikwad</footer>
+</div>
+
+<!-- detail panel (used by projects & blogs) -->
+<div id="detailPanel" class="detail-panel" aria-hidden="true">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <div id="detailTitle" style="font-size:20px;font-weight:700"></div>
+      <div id="detailShort" class="muted" style="margin-top:6px"></div>
+    </div>
+    <div>
+      <button class="ghost" id="closeDetail">Close</button>
+    </div>
+  </div>
+  <div id="detailBody" style="margin-top:16px"></div>
+</div>
+
+<script>
+  // small helpers
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- Projects (existing) ----------
+  const PROJECTS = {
+    "autonomous-robot": {
+      id: 'autonomous-robot',
+      title: 'Automatic Floor Cleaner Conversion Kit ',
+      short: 'I designed this machine from the initial concept sketches all the way to the final kit. The complete shape and structure were developed by me, following the full DRM process from start to finish. ',
+      images: { model: 'images/50601.png', drawing: 'images/50602.png' },
+      description: 'Designed the kit in Creo and AutoCad. '
+    },
+    "ravan-sword": {
+      id: 'ravan-sword',
+      title: 'Making new version of Moppiing Machine',
+      short: 'My team and I redesigned the mopping machine by studying the limitations of the previous version and creating a more efficient, improved model..',
+      images: { model: 'images/mopv61.png', drawing: 'images/nmr1.png' },
+      description: 'Organic modelling and manufacturing planning; production-ready machining drawings.'
+    },
+    "enclosure": {
+      id: 'enclosure',
+      title: 'Drone Design and Assembly',
+      short: 'Design the drone using the solidworks.',
+      images: { model: 'images/drone.png', drawing: 'images/enclosure_drawing.jpg' },
+      description: 'Designed plastic housings with integrated silicone seals and prepared vendor drawings.'
+    },
+    "project-4": { id:'project-4', title:'Project 4', short:'Short description', images:{model:'images/placeholder4_model.jpg',drawing:'images/placeholder4_drawing.jpg'}, description:'Description for project 4.' },
+    "project-5": { id:'project-5', title:'Project 5', short:'Short description', images:{model:'images/placeholder5_model.jpg',drawing:'images/placeholder5_drawing.jpg'}, description:'Description for project 5.' },
+    "project-6": { id:'project-6', title:'Project 6', short:'Short description', images:{model:'images/placeholder6_model.jpg',drawing:'images/placeholder6_drawing.jpg'}, description:'Description for project 6.' },
+    "project-7": { id:'project-7', title:'Project 7', short:'Short description', images:{model:'images/placeholder7_model.jpg',drawing:'images/placeholder7_drawing.jpg'}, description:'Description for project 7.' },
+    "project-8": { id:'project-8', title:'Project 8', short:'Short description', images:{model:'images/placeholder8_model.jpg',drawing:'images/placeholder8_drawing.jpg'}, description:'Description for project 8.' }
+  };
+  const projectsOrder = Object.keys(PROJECTS);
+  const DEFAULT_VISIBLE = 3;
+  let visibleCount = DEFAULT_VISIBLE;
+
+  const projectsGrid = document.getElementById('projectsGrid');
+  const totalCountEl = document.getElementById('totalCount');
+  const visibleCountEl = document.getElementById('visibleCount');
+  const showMoreBtn = document.getElementById('showMore');
+  const showLessBtn = document.getElementById('showLess');
+
+  function renderProjectGrid(){
+    projectsGrid.innerHTML = '';
+    const toShow = projectsOrder.slice(0, visibleCount);
+    toShow.forEach(key=>{
+      const p = PROJECTS[key];
+      const card = document.createElement('article');
+      card.className = 'project-card card';
+      card.innerHTML = `
+        <div class="thumb">${escapeHtml(p.title)}</div>
+        <h4>${escapeHtml(p.title)}</h4>
+        <p class="muted">${escapeHtml(p.short)}</p>
+        <div class="project-footer">
+          <div class="small-meta">${escapeHtml(p.images.model.split('/').pop())}</div>
+          <div><button class="ghost btn openProject" data-id="${escapeHtml(p.id)}" type="button">Open</button></div>
+        </div>
+      `;
+      projectsGrid.appendChild(card);
+    });
+    visibleCountEl.textContent = visibleCount;
+    if(visibleCount >= projectsOrder.length){ showMoreBtn.style.display = 'none'; showLessBtn.style.display = 'inline-block'; }
+    else { showMoreBtn.style.display = 'inline-block'; showLessBtn.style.display = 'none'; }
+  }
+  renderProjectGrid();
+  showMoreBtn?.addEventListener('click', ()=>{ visibleCount = projectsOrder.length; renderProjectGrid(); });
+  showLessBtn?.addEventListener('click', ()=>{ visibleCount = DEFAULT_VISIBLE; renderProjectGrid(); });
+
+  // ---------- Blogs (hardcoded list) ----------
+  // To add a new blog, edit the BLOGS array below directly in this file.
+  const BLOGS = [
+    { id:'blog-1', title:'Welcome to my blog', date:'2025-12-10', content:'This is a starter post. Use the code to add posts directly into the BLOGS array. Posts will open in the side panel when you click "Read".' },
+    { id:'blog-2', title:'CAD Automation Notes', date:'2025-11-05', content:'Short notes about writing macros for Creo Toolkit, parameterization and template workflows.' }
+  ];
+  const blogsGrid = document.getElementById('blogsGrid');
+  const showMoreBlogsBtn = document.getElementById('showMoreBlogs');
+  let showAllBlogs = false;
+
+  function renderBlogs(){
+    blogsGrid.innerHTML = '';
+    const list = showAllBlogs ? BLOGS.slice().reverse() : BLOGS.slice().reverse().slice(0,3);
+    list.forEach(b=>{
+      const card = document.createElement('article');
+      card.className = 'blog-card card';
+      card.innerHTML = `
+        <div style="height:110px;border-radius:8px;background:linear-gradient(135deg,#063a2f,#041226);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700">${escapeHtml(b.title)}</div>
+        <h4>${escapeHtml(b.title)}</h4>
+        <p class="muted">${escapeHtml(truncate(b.content,120))}</p>
+        <div class="project-footer">
+          <div class="small-meta">${escapeHtml(b.date)}</div>
+          <div><button class="ghost btn openBlog" data-id="${escapeHtml(b.id)}" type="button">Read</button></div>
+        </div>
+      `;
+      blogsGrid.appendChild(card);
+    });
+    showMoreBlogsBtn.textContent = showAllBlogs ? 'Show recent' : 'Show all blogs';
+  }
+
+  function truncate(s,n){ return s.length>n ? s.slice(0,n).trim() + '…' : s; }
+
+  renderBlogs();
+
+  showMoreBlogsBtn.addEventListener('click', ()=>{ showAllBlogs = !showAllBlogs; renderBlogs(); });
+
+  // ---------- Detail panel behavior (projects & blogs) ----------
+  const detailPanel = document.getElementById('detailPanel');
+  const detailTitle = document.getElementById('detailTitle');
+  const detailShort = document.getElementById('detailShort');
+  const detailBody = document.getElementById('detailBody');
+  const closeDetailBtn = document.getElementById('closeDetail');
+
+  document.addEventListener('click', function(e){
+    const pbtn = e.target.closest('.openProject');
+    const bbtn = e.target.closest('.openBlog');
+    if(pbtn){ openProjectDetail(pbtn.dataset.id); return; }
+    if(bbtn){ openBlog(bbtn.dataset.id); return; }
+  });
+
+  function openProjectDetail(id){
+    const p = PROJECTS[id];
+    if(!p) return;
+    detailTitle.textContent = p.title;
+    detailShort.textContent = p.short;
+    detailBody.innerHTML = `
+      <div class="muted">${escapeHtml(p.description)}</div>
+      <div class="detail-stage" style="margin-top:12px">
+        <div>
+          <div class="small-meta">Model (render)</div>
+          <img loading="lazy" src="${escapeHtml(p.images.model)}" alt="${escapeHtml(p.title)} model"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'><rect width=\'100%\' height=\'100%\' fill=\'%23071226\'/><text x=\'50%\' y=\'50%\' fill=\'%2398a0b3\' font-size=\'18\' text-anchor=\'middle\'>Upload model image at ${encodeURIComponent(p.images.model)}</text></svg>'" />
+        </div>
+        <div>
+          <div class="small-meta">Drawing / Orthographic</div>
+          <img loading="lazy" src="${escapeHtml(p.images.drawing)}" alt="${escapeHtml(p.title)} drawing"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'><rect width=\'100%\' height=\'100%\' fill=\'%23071226\'/><text x=\'50%\' y=\'50%\' fill=\'%2398a0b3\' font-size=\'18\' text-anchor=\'middle\'>Upload drawing image at ${encodeURIComponent(p.images.drawing)}</text></svg>'" />
+        </div>
+      </div>
+    `;
+    detailPanel.classList.add('show'); detailPanel.setAttribute('aria-hidden','false');
+    history.replaceState(null,'','#project=' + encodeURIComponent(id));
+    detailPanel.scrollTop = 0;
+  }
+
+  function openBlog(id){
+    const b = BLOGS.find(x=>x.id===id);
+    if(!b) return;
+    detailTitle.textContent = b.title;
+    detailShort.textContent = b.date;
+    detailBody.innerHTML = `
+      <div style="margin-top:10px;white-space:pre-line;line-height:1.6;color:#eaf2ff">${escapeHtml(b.content)}</div>
+    `;
+    detailPanel.classList.add('show'); detailPanel.setAttribute('aria-hidden','false');
+    history.replaceState(null,'','#blog=' + encodeURIComponent(id));
+    detailPanel.scrollTop = 0;
+  }
+
+  closeDetailBtn.addEventListener('click', ()=>{ detailPanel.classList.remove('show'); detailPanel.setAttribute('aria-hidden','true'); if(location.hash) history.replaceState(null,'',location.pathname + location.search); });
+
+  // open project/blog if URL hash exists on load
+  window.addEventListener('load', function(){
+    if(location.hash){
+      if(location.hash.startsWith('#project=')){
+        const id = decodeURIComponent(location.hash.replace('#project=',''));
+        if(PROJECTS[id]) { visibleCount = Math.max(DEFAULT_VISIBLE, projectsOrder.indexOf(id)+1); renderProjectGrid(); openProjectDetail(id); }
+      } else if(location.hash.startsWith('#blog=')){
+        const id = decodeURIComponent(location.hash.replace('#blog=',''));
+        renderBlogs();
+        openBlog(id);
+      }
+    }
+  });
+
+  // utility functions
+  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; }); }
+  function truncateStr(s,n){ return s.length>n ? s.slice(0,n).trim() + '…' : s; }
+
+  // initial set of UI values
+  document.getElementById('totalCount').textContent = projectsOrder.length;
+  document.getElementById('visibleCount').textContent = visibleCount;
+
+  // expose data for quick dev (optional)
+  window.ABHI_PROJECTS = PROJECTS;
+  window.ABHI_BLOGS = BLOGS;
+
+</script>
+</body>
+</html>
